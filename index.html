@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dungeon World Monster Generator Deutsch</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Dungeon World Monster Generator</h1>
+  </div>
+
+  <section id="generator">
+    <div class="controlsBox container">
+      <h2>Monster erschaffen</h2>
+      <form class="controls" id="controls">
+
+        <h4>Welche Taten kennt man von ihm? (Sein erster Spielzug)</h4>
+        <textarea id="moveInput" rows="2" cols="80" form="controls"></textarea>
+
+        <h4>Was will es, das anderen Probleme verursacht? (Sein Instinkt)</h4>
+        <textarea id="instinctInput" "2" cols="80" form="controls"></textarea>
+
+        <h4>Wie jagt oder kämpft es normalerweise?</h4>
+        <input type="radio" name="grpRadio" value="" checked="checked" id="grpRadio1" form="controls">
+        <label for="grpRadio1" form="controls"> In großen Gruppen: Horde, W6 Schaden, 3 TP</label>
+        <br>
+        <input type="radio" name="grpRadio" value="" id="grpRadio2" form="controls"><label for="grpRadio2" form="controls"> In kleinen Gruppen, zwischen 2 und 5: Gruppe, W8 Schaden, 6 TP</label>
+        <br>
+        <input type="radio" name="grpRadio" value="" id="grpRadio3" form="controls"><label for="grpRadio3" form="controls"> Für sich alleine: Einzelgänger, W10 Schaden, 12 TP</label>
+
+        <h4>Wie groß ist es?</h4>
+        <input type="radio" name="sizRadio" value="" checked="checked" id="sizRadio1" form="controls"><label for="sizRadio1" form="controls">Kleiner als eine Hauskatze: Winzig, <i>Hand</i>, -2 Schaden</label>
+        <br>
+        <input type="radio" name="sizRadio" value="" id="sizRadio2" form="controls"><label for="sizRadio2" form="controls">Halblingsartig: Klein, <i>kurz</i></label>
+        <br>
+        <input type="radio" name="sizRadio" value="" id="sizRadio3" form="controls"><label for="sizRadio3" form="controls">etwa Menschengroß: <i>kurz</i></label>
+        <br>
+        <input type="radio" name="sizRadio" value="" id="sizRadio4" form="controls"><label for="sizRadio4" form="controls">So groß wie ein Wagen: Groß, <i>kurz, lang </i> + 4 TP, +1 Schaden</label>
+        <br>
+        <input type="radio" name="sizRadio" value="" id="sizRadio5" form="controls"><label for="sizRadio5" form="controls">Viel Größer als ein Wagen: riesig, <i>Lang</i>, +8 TP, +3 Schaden</label>
+
+        <h4>Was ist seine wichtigste Verteidigung?</h4>
+        <input type="radio" name="defRadio" value="" checked="checked" id="defRadio1" form="controls"><label for="defRadio1" form="controls">Kleidung oder Fleisch: 0 Rüstung</label>
+        <br>
+        <input type="radio" name="defRadio" value="" id="defRadio2" form="controls"><label for="defRadio2" form="controls">Leder oder zähe Haut: 1 Rüstung</label>
+        <br>
+        <input type="radio" name="defRadio" value="" id="defRadio3" form="controls"><label for="defRadio3" form="controls">Kettengeflecht oder Schuppen: 2 Rüstung</label>
+        <br>
+        <input type="radio" name="defRadio" value="" id="defRadio4" form="controls"><label for="defRadio4" form="controls">Platten oder Knochen: 3 Rüstung</label>
+        <br>
+        <input type="radio" name="defRadio" value="" id="defRadio5" form="controls"><label for="defRadio5" form="controls">Permanenter magischer Schutz: 4 Rüstung, Magisch</label>
+
+        <h4>Wofür ist es bekannt? (Wähle alles Zutreffende)</h4>
+        <input type="checkbox" name="strCheck" value="" id="strCheck" form="controls"><label for="strCheck" form="controls">Unbeugsame Stärke: + 2 Schaden, Wuchtig</label>
+        <br>
+        <input type="checkbox" name="skilledAtkCheck" value="" id="skilledAtkCheck" form="controls"><label for="skilledAtkCheck" form="controls">Geschickter Angriff: Würfle zweimal Schaden und nimm das höhere Ergebnis</label>
+        <br>
+        <input type="checkbox" name="skilledDefCheck" value="" id="skilledDefCheck" form="controls"><label for="skilledDefCheck" form="controls">Geschickte Verteidigung: + 1 Rüstung</label>
+        <br>
+        <input type="checkbox" name="deftStrikeCheck" value="" id="deftStrikeCheck" form="controls"><label for="deftStrikeCheck" form="controls">Geschickte Hiebe: +1 Durchdringung</label>
+        <br>
+        <input type="checkbox" name="endurCheck" value="" id="endurCheck" form="controls"><label for="endurCheck" form="controls">Unheimliche Ausdauer: +4 TP</label>
+        <br>
+        <input type="checkbox" name="trickeryCheck" value="" id="trickeryCheck" form="controls"><label for="trickeryCheck" form="controls">Täuschung und List: Heimlich, schreibe einen Spielzug über schmutzige Tricks</label>
+        <br>
+        <div class="trickeryDiv">
+          <textarea name="trickeryInput" id="trickeryInput" rows="2" cols="80"></textarea>
+        </div>
+        <input type="checkbox" name="adaptationCheck" value="" id="adaptationCheck" form="controls"><label for="AdaptationCheck" form="controls">Eine nützliche Anpassung wie Flügel oder amphibische Lebensweise: füge eine Anpassung als
+          Besonderheit
+          hinzu</label>
+        <br>
+        <div class="adaptationDiv">
+          <label class="" for="adaptationInput">Anpassung (1 Wort): <input type="text" name="adaptationInput" id="adaptationInput" value=""> </label>
+        </div>
+        <input type="checkbox" name="godsCheck" value="" id="godsCheck" form="controls"><label for="godsCheck" form="controls">Gunst der Götter: Göttlich und...(deine Entscheidung)</label>
+        <br>
+        <div class="godsDiv">
+          <input type="radio" name="godsRadio" id="godsRadio1" value="" checked="checked"><label for="godsRadio1">+2 Schaden</label>
+          <input type="radio" name="godsRadio" id="godsRadio2" value=""><label for="godsRadio2">+2 TP</label>
+          <input type="radio" name="godsRadio" id="godsRadio3" value=""><label for="godsRadio3">beides</label>
+        </div>
+
+        <input type="checkbox" name="magicCheck" value="" id="magicCheck" form="controls"><label for="magicCheck" form="controls">Zauber und Magie: Magisch,schreibe einen Spielzug über seine magischen Fähigkeiten</label>
+        <br>
+        <div class="magicDiv">
+          <textarea name="magicInput" id="magicInput" rows="2" cols="80"></textarea>
+        </div>
+
+        <h4>Was ist seine übliche Angriffsart?</h4>
+        <label for="atkTypeInput">Angriffsart (z.B. Waffe, Klauen, Zauberspruch): <input type="text" name="atkTypeInput" id="atkTypeInput" value=""></label>
+
+        <input type="checkbox" name="cruelWeaponCheck" id="cruelWeaponCheck" form="controls"> <label for="cruelWeaponCheck" form="controls">Seine Bewaffnung ist grausam und offensichtlich: + 2 Schaden</label>
+        <br>
+        <input type="checkbox" name="distanceWeaponCheck" id="distanceWeaponCheck" form="controls"> <label for="distanceWeaponCheck" form="controls">Sie hilft dem Monster dabei, andere auf Distanz zu halten: Lang</label>
+        <br>
+        <input type="checkbox" name="smallWeaponCheck" id="smallWeaponCheck" form="controls"> <label for="smallWeaponCheck" form="controls">Seine Bewaffnung ist klein und schwach: reduziere seinen Schadenswürfel um eine Kategorie</label>
+        <br>
+        <input type="checkbox" name="metalCheck" id="metalCheck" form="controls"> <label for="metalCheck" form="controls">Seine Bewaffnung kann Metall schneiden oder durchstoßen: Brutal und...</label>
+        <br>
+        <div class="metalDiv">
+          <input type="radio" name="metalRadio" id="metalRadio1" value="" checked="checked"> <label for="metalRadio1">Durchdringung +1 oder</label>
+          <input type="radio" name="metalRadio" id="metalRadio2" value=""> <label for="metalRadio2">Durchdringung +3, falles es Metall einfach zerreißen kann</label>
+        </div>
+        <input type="checkbox" name="ignoreWeaponCheck" id="ignoreWeaponCheck" form="controls"> <label for="ignoreWeaponCheck" form="controls">Rüstung hilft nicht gegen seinen Schaden (wegen Magie, Größe usw.): ignoriert Rüstung</label>
+        <br>
+        <input type="checkbox" name="rangedCheck" id="rangedCheck" form="controls"> <label for="rangedCheck" form="controls">Es greift für gewöhnlich aus der Entfernung an (mit Pfeilen, Zaubern oder anderen Projektilen):</label>
+        <br>
+        <div class="rangedDiv">
+          <input type="radio" name="rangedRadio" id="rangedRadio1" value="" checked="checked"> <label for="rangedRadio1"><i>Nah</i></label>
+          <input type="radio" name="rangedRadio" id="rangedRadio2" value=""> <label for="rangedRadio2"><i>Fern</i></label>
+          <input type="radio" name="rangedRadio" id="rangedRadio3" value=""> <label for="rangedRadio3">beides</label>
+        </div>
+
+        <h4>Welche der folgenden Punkte beschreiben es? (Wähle alle passenden)</h4>
+        <input type="checkbox" name="deceitfulCheck" id="deceitfulCheck" form="controls"> <label for="deceitfulCheck" form="controls">Es sind nicht die von ihm geschlagenen Wunden, die es so gefährlich machen. Verschlagen, reduziere den
+          Schadenswürfel um eine Kategorie, schreibe einen Spielzug darüber, was es so gefährlich macht:</label>
+        <br>
+        <div class="deceitfulDiv">
+          <textarea id="deceitfulInput" rows="2" cols="80" form="controls"></textarea>
+        </div>
+        <input type="checkbox" name="grpCheck" id="grpCheck" form="controls"> <label for="grpCheck" form="controls">Es lebt in großen Gruppen, die ihm zur Hilfe eilen: Organisiert, schreibe einen Spielzug darüber, wie es andere zur Hilfe
+          ruft:</label>
+        <br>
+        <div class="grpDiv">
+          <textarea id="grpInput" rows="2" cols="80" form="controls"></textarea>
+        </div>
+        <input type="checkbox" name="intelCheck" id="intelCheck" form="controls"> <label for="intelCheck" form="controls">Es ist ungefähr so intelligent wie ein Mensch: Intelligent</label>
+        <br>
+        <input type="checkbox" name="shieldCheck" id="shieldCheck" form="controls"> <label for="shieldCheck" form="controls">Es verteidigt sich aktiv mit einem Schild oder Ähnlichem: Vorsichtig, +1 Rüstung</label>
+        <br>
+        <input type="checkbox" name="hoardCheck" id="hoardCheck" form="controls"> <label for="hoardCheck" form="controls">Es sammelt Dinge, die Menschen als wertvoll betrachten (Gold, Edelsteine, Geheimnisse): Sammler</label>
+        <br>
+        <input type="checkbox" name="externarCheck" id="externarCheck" form="controls"> <label for="externarCheck" form="controls">Es ist nicht von dieser Welt: Externar, schreibe einen Spielzug darüber, wie es sein außerweltlcihes Wissen uns
+          seine
+          Macht einsetzt.</label>
+        <br>
+        <div class="externarDiv">
+          <textarea id="externarInput" rows="2" cols="80" form="controls"></textarea>
+        </div>
+        <input type="checkbox" name="unliveCheck" id="unliveCheck" form="controls"> <label for="unliveCheck" form="controls">Es wird von etwas Unnatürlichen am Leben erhalten: +4 TP</label>
+        <br>
+        <input type="checkbox" name="constructCheck" id="constructCheck" form="controls"> <label for="constructCheck" form="controls">Es wurde von Jemandem erschaffen: Konstrukt. Gib ihm ein oder 2 Besonderheiten, die mit seiner Erschaffung oder
+          seinem Exitenzgrund zusammenhängen.</label>
+        <br>
+        <div class="constructDiv">
+          <label for="constructInput1">Besonderheit 1: <input type="text" name="constructInput" id="constructInput1" value=""></label>
+          <label for="constructInput2">Besonderheit 2: <input type="text" name="constructInput" id="constructInput2" value=""></label>
+        </div>
+        <input type="checkbox" name="terribleCheck" id="terribleCheck" form="controls"> <label for="terribleCheck" form="controls">Seine Erscheinung ist verstörend, schrecklich oder furchtbar: Furcherregend, schreibe eine Besonderheit darüber,
+          warum
+          es so schrecklich ist.</label>
+        <br>
+        <div class="terribleDiv">
+          <label for="terribleInput">Besonderheit 1: <input type="text" name="terribleInput" id="terribleInput" value=""></label>
+        </div>
+        <input type="checkbox" name="amorphousCheck" id="amorphousCheck" form="controls"> <label for="amorphousCheck" form="controls">Es hat keine Organe oder erkennbare Anatomie: Amorph, +1 Rüstung, +3 TP</label>
+        <br>
+        <input type="checkbox" name="oldCheck" id="oldCheck" form="controls"> <label for="oldCheck" form="controls">Es (oder seine Art) ist uralt - älter als Menschen, Elfen und Zwerge: erhöhe seinen Schadenwürfel um eine Kategorie</label>
+        <br>
+        <input type="checkbox" name="pacifistCheck" id="pacifistCheck" form="controls"> <label for="pacifistCheck" form="controls">Es schreckt vor Gewalt zurück: würfel zweimal Schaden und nehmen das niedrigere Ergebnis</label>
+
+        <h4>Wie heißt dein Monster? </h4>
+        <textarea id="monsterNameInput" rows="1" cols="80" form="controls"></textarea>
+
+      </form>
+
+
+      <button class="button-primary" type="button" name="createMonster" id="createBtn">Monster erstellen</button>
+
+    </div>
+
+    <br>
+
+  </section>
+
+  <section id="output">
+    <div class="outputBox container">
+
+      <h3 class="monsterName">Monstername</h3>
+
+      <p class="">
+        <i class="tags">
+          Organisation, Größe
+        </i>
+      </p>
+
+      <p>
+        <span class="atkName">
+          Angriff
+        </span>
+        <span class="atkDmg">
+          (Schaden)
+        </span><!--
+        --><span class="atkRange">
+          Reichweite
+        </span><!--
+        --><span class="atkTag">
+          etwas Besonderes
+        </span>
+      </p>
+      <!-- comment used to remove whitespace between spans -->
+
+      <p>
+        <span class="hitPoints">
+          1
+        </span>
+        <span>TP, </span>
+        <span>Rüstung: </span>
+        <span class="armor">
+          0
+        </span>
+      </p>
+
+      <p>
+        <strong>Besonderheit: </strong>
+        <span class="specialTags"> eins, zwei drei</span>
+      </p>
+
+      <p>
+        <i>Instinkt: </i>
+        <span class="instinctOutput">Sein Instinkt!</span>
+      </p>
+      <ul class="moveOutput">
+        <li class="move1">1. Spielzug des Monsters</li>
+      </ul>
+
+      <button onClick="window.location.href=window.location.href">Zurück</button>
+
+
+    </div>
+
+  </section>
+
+  <script type="text/javascript" src=js/jquery-3.6.0.min.js></script>
+  <script type="text/javascript" src="js/index.js"> </script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+body{
+  background-color: #FCF5E5;
+}
+
+h1{
+font-family: serif;
+}
+
+h2{
+  font-size: 3rem;
+  padding-bottom: 3rem;
+}
+
+h3{
+  /* monstername */
+  margin: 0;
+  font-size: 3rem;
+}
+
+h4{
+ margin-top: 2rem;
+ font-size: 2rem;
+ font-weight: bold;
+}
+
+input[type='checkbox'] {
+  float: left;
+  margin-top: 4px;
+}
+
+input[type='radio'] {
+  float: left;
+  margin-top: 4px;
+}
+
+input[type='text']{
+  margin-left: 0.5rem;
+  width: 50%;
+}
+
+label {
+  margin: 0 0 0 1.5em;
+}
+
+p{
+  margin: 0
+}
+
+textarea{
+  display: block;
+  padding: 0;
+  width: 75%;
+  margin: 0;
+}
+
+#trickeryInput, #deceitfulInput, #grpInput, #externarInput{
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.godsDiv , .rangedDiv, .metalDiv {
+position: relative;
+left: 2rem;
+top: -1.2rem;
+}
+
+.godsDiv label, .rangedDiv label, .metalDiv label{
+margin: 10px 0 10px 2rem;
+font-weight: normal;
+}
